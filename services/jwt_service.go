@@ -38,7 +38,7 @@ func (s *jwtService) GenerateToken(id uint) (string, error) {
 
 	t, err := token.SignedString([]byte(s.secretKey))
 	if err != nil {
-		return " ", err
+		return "", err
 	}
 
 	return t, nil
